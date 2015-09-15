@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 2
+</h1>
+
+<p class="description">
+	Create first snake and work with a third-party library.
+</p>
+
+<h2>Add snake vairable</h2>
+<p>This variable will represent the snake</p>
+<pre>	
+var snake = [{ top: 0, left: 0}];
+
+</pre>
+
+<h2>Draw the snake</h2>
+<p>Drawing the snake based on chunk.js</p>
+<pre>
+var drawableSnake = { color: "green", pixels: snake };
+var drawableObjects = [drawableSnake];
+CHUNK.draw(drawableObjects);
+</pre>
+
+
+
+</body>
+</html>
