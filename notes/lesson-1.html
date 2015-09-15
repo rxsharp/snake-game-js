@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 1
+</h1>
+
+<p class="description"></p>
+
+<h2 class="note">Console Log</h2>
+<pre>
+  console.log('programming!');
+</pre>
+<p>Console log prints in the browser's console. It helps with debugging.</p>
+
+<h2 class="note">Other stuff to put in the console</h2>
+
+<h3>Math</h3>
+<p>Simple math, variables to math, math with variables, etc</p>
+<pre>
+var add = 5 + 5
+var subtract = 10-1
+var multiply = 4 * 2
+var divide = 49/7
+
+var addTen = add + 10
+</pre>
+
+<h3>Arrays</h3>
+<ul>
+  <li>Arrays are are a type of object that are designed with the usage of square brackets.</li>
+  <li>Length is a helpful attribute.</li>
+  <li>Objects can have functions, (example: push function) which are invoked with parentheses.</li>
+</ul>
+<pre>
+  var fruits = ["kiwi", "strawberry", "plum"]
+  var howLong = fruits.length
+  var colors = ["blue", "green", "gold", "silver"]
+  var addBronze = colors.push("bronze")
+  var sliceIt = fruits.slice(2)
+</pre>
+
+<h3>Arrays and forEach</h3>
+<pre>
+  sliceIt.forEach(function(metal) {
+  console.log('Metal colors: ' + metal)
+  })
+</pre>
+
+<h3>Make your own functions</h3>
+<pre>
+  var isAwesome = function(word) {
+  return word + " is awesome!"
+}
+isAwesome("Coding")
+</pre>
+<p>Functions take parameters. In the coding case above, word is the parameter</p>
+
+<h3>Conditionals</h3>
+<pre>
+var five = 5
+  if(five > 0) {
+  console.log(five + ' is greater than zero.')
+}
+</pre>
+
+<h2 class="source">
+  Source(s)
+</h2>
+
+<ul>
+  <li>http://www.w3schools.com/js/js_output.asp</li>
+</ul>
+
+<script>
+
+var add = 5 + 5
+var subtract = 10-1
+var multiply = 4 * 2
+var divide = 49/7
+var addTen = add + 10
+
+  var fruits = ["kiwi", "strawberry", "plum"]
+  var howLong = fruits.length
+  var colors = ["blue", "green", "gold", "silver"]
+  var addBronze = colors.push("bronze")
+  var sliceIt = colors.slice(2)
+
+console.log('Yo console!') 
+console.log('Add:' + add)
+console.log('subtract:' + subtract)
+console.log('multiply:' + multiply)
+console.log('divide:' + divide)
+console.log('addTen' + addTen) 
+
+console.log('fruits: ' + fruits) 
+console.log('howLong: ' + howLong) 
+console.log('colors: ' + colors) 
+console.log('addBronze: ' + addBronze) 
+console.log('sliceIt: ' + sliceIt) 
+
+sliceIt.forEach(function(metal) {
+  console.log('Metal colors: ' + metal)
+})
+
+var isAwesome = function(word) {
+  return word + " is awesome!"
+}
+console.log(isAwesome("Coding"))
+
+var five = 5
+  if(five > 0) {
+  console.log(five + ' is greater than zero.')
+}
+
+</script>
+
+</body>
+</html>
+
+
+
+
+
