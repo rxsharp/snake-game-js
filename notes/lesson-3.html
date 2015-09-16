@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 3
+</h1>
+<p class="description"></p>
+
+<h2>Snake to draw</h2>
+<pre>
+  var drawSnake = function(snakeToDraw) {
+  var drawableSnake = { color: "#3EBE9B", pixels: snakeToDraw };
+  var drawableObjects = [drawableSnake];
+  CHUNK.draw(drawableObjects);
+}
+
+var snake = [{ top: 0, left: 0}];
+drawSnake(snake);
+</pre>
+
+</body>
+</html>
