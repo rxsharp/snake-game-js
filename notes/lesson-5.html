@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 5
+</h1>
+
+<p class="description">
+<ul>
+	<li>Get CHUNK to execute the move and draw commands</li>
+	<li>Create advancedGame function</li>
+</ul>
+</p>
+
+<strong>New snake.js</strong>
+<pre>
+var drawSnake = function(snakeToDraw) {
+  var drawableSnake = { color: "green", pixels: snakeToDraw };
+  var drawableObjects = [drawableSnake];
+  CHUNK.draw(drawableObjects);
+}
+
+
+var moveSnake = function(snake) {
+  var oldSegment = snake[0];
+  var newSegment = { top: oldSegment.top + 1, left: oldSegment.left };
+  var newSnake = [newSegment];
+  return newSnake;
+}
+
+var advanceGame = function() {
+  snake = moveSnake(snake);
+  drawSnake(snake);
+}
+
+// Snake start position
+var snake = [{top: 0, left: 0 }];
+
+//Execution of snake movement and draw commands
+CHUNK.executeNTimesPerSecond(advanceGame, 1);
+
+</pre>
+
+</body>
+</html>
