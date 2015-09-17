@@ -4,3 +4,11 @@ pre {
     font-size: 13pt;
     overflow-x: auto;
 }
+
+.add {
+	background-color: #a6f3a6;
+}
+
+.remove {
+	background-color: #f8cbcb;
+}

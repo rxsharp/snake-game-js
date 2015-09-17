@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 6
+</h1>
+<p class="description">
+<ul>
+	<li>Create a function called moveSegment to move the segment based on direction</li>
+	<li>Change moveSnake function to move in the direction of the old segment using newSegment variable</li>
+	<li>Add direction to initial snake start position</li>
+</ul>
+</p>
+<strong>New snake.js</strong>
+<pre>
+var drawSnake = function(snakeToDraw) {
+  var drawableSnake = { color: "green", pixels: snakeToDraw };
+  var drawableObjects = [drawableSnake];
+  CHUNK.draw(drawableObjects);
+}
+
+<span class="add">
+var moveSegment = function(segment) {
+  if (segment.direction === "down") {
+    return { top: segment.top + 1, left: segment.left }
+  } else if (segment.direction === "up") {
+    return { top: segment.top - 1, left: segment.left }
+  } else if (segment.direction === "right") {
+    return { top: segment.top, left: segment.left + 1 }
+  } else if (segment.direction === "left") {
+    return { top: segment.top, left: segment.left - 1 }
+  }
+  return segment;
+}
+</span>
+
+var moveSnake = function(snake) {
+	var oldSegment = snake[0];
+	<span class="remove">var newSegment = {top: oldSegment.top + 1, left: oldSegment.left};</span>
+	var newSegment = moveSegment(oldSegment);
+	<span class="add">newSegment.direction = oldSegment.direction;</span>
+	newSnake = [newSegment];
+	return newSnake
+}
+
+var advanceGame = function() {
+  snake = moveSnake(snake);
+  drawSnake(snake);
+}
+
+// Snake start position
+var snake = [{ top: 0, left: 0, <span class="add">direction: "down"</span> }];
+
+//Execution of snake movement and draw commands
+CHUNK.executeNTimesPerSecond(advanceGame, 1);
+</pre>
+
+</body>
+</html>
