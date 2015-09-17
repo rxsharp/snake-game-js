@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 4
+</h1>
+<p class="description"> Not a lot to document for this lesson. <br>
+Write a function to change the snake's segment's top and left values.
+
+</p>
+
+<pre>
+var drawSnake = function(snakeToDraw) {
+  var drawableSnake = { color: "green", pixels: snakeToDraw };
+  var drawableObjects = [drawableSnake];
+  CHUNK.draw(drawableObjects);
+}
+
+var moveSnake = function(snake) {
+  var oldSegment = snake[0];
+  var newSegment = { top: oldSegment.top + 1, left: oldSegment.left };
+  var newSnake = [newSegment];
+  return newSnake;
+}
+
+var snake = [{ top: 0, left: 0}];
+drawSnake(snake);
+</pre>
+
+<h2>In the console</h2>
+Change the position
+<pre>
+snake[0] = {top: 5, left: 5}
+</pre>
+
+Check to see the changes
+<pre>
+snake[0]
+</pre>
+
+Draw the snake to see the changes on the screen
+<pre>
+drawSnake(snake);
+</pre>
+
+Move the snake
+<pre>
+snake = moveSnake(snake);
+</pre>
+
+See the changes
+<pre>
+snake[0]
+</pre>
+The top changes to 6.
+
+</body>
+</html>
