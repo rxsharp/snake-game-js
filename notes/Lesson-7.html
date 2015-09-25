@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 7
+</h1>
+
+<p class="description">
+<i><span class="note">The notes are written in the code block</span></i>	
+</p>
+
+<strong>New snake.js</strong>
+<pre>
 
 var drawSnake = function(snakeToDraw) {
 var drawableSnake = {color: "#3EBE9B", pixels: snakeToDraw};
@@ -31,10 +48,12 @@ snake = moveSnake(snake);
 drawSnake(snake);
 }
 
-//Change the direction of the first segment to change the direction
+<span class="note">//Change the direction of the first segment to change the direction</span>
+<span class="add">
 var changeDirection = function(direction) {
   snake[0].direction = direction;
 }
+</span>
 
 // Snake start position
 var snake = [{top: 5, left: 9, direction: "up" }];
@@ -42,5 +61,12 @@ var snake = [{top: 5, left: 9, direction: "up" }];
 //Execution of snake movement and draw commands
 CHUNK.executeNTimesPerSecond(advanceGame, 1);
 
-//CHUNK can call the function changeDirection when an arrow key is pressed
-CHUNK.onArrowKey(changeDirection); 
+<span class="note">//CHUNK can call the function changeDirection when an arrow key is pressed</span>
+CHUNK.onArrowKey(changeDirection); //7.2 of two
+
+
+
+</pre>
+
+</body>
+</html>
