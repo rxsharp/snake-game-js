@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 8
+</h1>
+
+<p class="description">Add collision effect</p>
+<pre>
+  var advanceGame = function() {
+  snake = moveSnake(snake);
+  if (CHUNK.detectCollisionBetween(snake, CHUNK.gameBoundaries())) {
+    CHUNK.endGame();
+    CHUNK.flashMessage("Whoops! you hit a wall!");
+  }
+  drawSnake(snake);
+}
+</pre>
+</body>
+</html>

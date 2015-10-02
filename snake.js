@@ -36,6 +36,16 @@ var changeDirection = function(direction) {
   snake[0].direction = direction;
 }
 
+// Add collision effect
+  var advanceGame = function() {
+  snake = moveSnake(snake);
+  if (CHUNK.detectCollisionBetween(snake, CHUNK.gameBoundaries())) {
+    CHUNK.endGame();
+    CHUNK.flashMessage("Yikes! You hit a wall");
+  }
+  drawSnake(snake);
+}
+
 // Snake start position
 var snake = [{top: 5, left: 9, direction: "up" }];
 
