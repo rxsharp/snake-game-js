@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="notes.css">
+</head>
+<body>
+<h1 class="lesson-heading">
+  Lesson 9
+</h1>
+
+<p class="description">
+	Make snake longer than one segment
+</p>
+
+<pre>
 
 var drawSnake = function(snakeToDraw) {
 var drawableSnake = {color: "#3EBE9B", pixels: snakeToDraw};
@@ -19,15 +35,16 @@ var moveSegment = function(segment) {
 }
 
 var moveSnake = function(snake) {
-  var newSnake = [];
-  snake.forEach(function(oldSegment) {
-    var newSegment = moveSegment(oldSegment);
+<div class="add">var newSnake = [];
+  snake.forEach(function(oldSegment) {</div>var newSegment = moveSegment(oldSegment);
     newSegment.direction = oldSegment.direction;
-    newSnake.push(newSegment);
+<div class="add">   newSnake.push(newSegment);</div>
   });
-
   return newSnake;
-}
+  }
+<div class="remove">//	var oldSegment = snake[0];
+//	newSnake = [newSegment];
+</div>
 
 var advanceGame = function(){
 snake = moveSnake(snake);
@@ -50,10 +67,20 @@ var changeDirection = function(direction) {
 }
 
 // Snake start position
-var snake = [{top: 1, left: 0, direction: "down"}, { top: 0, left: 0, direction: "down" } ];
+<div class="remove">//var snake = [{top: 5, left: 9, direction: "up" }];</div><div class="add">var snake = [{top: 1, left: 1, direction: "down"}, { top: 0, left: 0, direction: "down" } ];</div>
+//The second segment will go down
 
 //Execution of snake movement and draw commands
 CHUNK.executeNTimesPerSecond(advanceGame, 1);
 
 //CHUNK can call the function changeDirection when an arrow key is pressed
 CHUNK.onArrowKey(changeDirection); 
+
+
+
+
+
+</pre>
+
+</body>
+</html>
