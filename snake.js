@@ -18,16 +18,22 @@ var moveSegment = function(segment) {
   return segment;
 }
 
-var moveSnake = function(snake) {
-  var newSnake = [];
-  snake.forEach(function(oldSegment) {
-    var newSegment = moveSegment(oldSegment);
-    newSegment.direction = oldSegment.direction;
-    newSnake.push(newSegment);
-  });
-
-  return newSnake;
+var segmentFurtherForwardThan = function(index, snake) {
+  if (snake[index - 1] === undefined) {
+    return snake[index];
+  } else {
+    return snake[index - 1];
+  }
 }
+
+var moveSnake = function(snake) {
+  return snake.map(function(oldSegment, segmentIndex) {
+    var newSegment = moveSegment(oldSegment);
+    newSegment.direction = segmentFurtherForwardThan(segmentIndex, snake).direction;
+    return newSegment;
+  });
+}
+
 
 var advanceGame = function(){
 snake = moveSnake(snake);
